@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Products;
+use App\Models\Record;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Products::factory(10)->create();
-
+       
         $this->call([
             RolesAndPersmission::class,
+            MusicSeeder::class
         ]);
     }
 }

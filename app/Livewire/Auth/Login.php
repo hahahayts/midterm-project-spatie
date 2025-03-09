@@ -16,7 +16,7 @@ class Login extends Component
     public $password = '';
 
     public function mount(){
-        if(Auth::check()) return redirect('/products');
+        if(Auth::check()) return redirect('/records');
     }
 
     public function login(){
@@ -26,7 +26,7 @@ class Login extends Component
         if(Auth::attempt(['email' => $this->email, 'password'=> $this->password])){
             session()->regenerate();
 
-            return redirect()->to('/products');
+            return redirect()->to('/records');
         }else {
             $this->addError('email', 'Invalid email or password.');
         }

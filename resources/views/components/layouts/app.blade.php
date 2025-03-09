@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>{{ $title ?? 'Page Title' }}</title>
+    
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
@@ -18,7 +18,7 @@
             <div class="flex gap-7 items-center">
 
             @auth
-            <a href="/products" wire:navigate>Products</a>
+            <a href="/records" wire:navigate>Records</a>
             <a href="/create" wire:navigate>Create</a>
             <p>{{auth()->user()->name}}</p>
 
